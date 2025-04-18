@@ -17,5 +17,6 @@ jobs:
 	      owner: context.repo.owner,
 	      repo: context.repo.repo,
 	      body: "Thanks for your pull request! A maintainer will 
-review it soon."
+review it soon.\n\nTiggered by: @${{ github.actor 
+}}"
 	    })
