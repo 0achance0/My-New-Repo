@@ -1,0 +1,21 @@
+name: PR Greeter
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  greet:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Post welcome comment
+        uses: actions/github-script@v6
+        with:
+          scripts: |
+            github.rest.issues.createComment({
+	      issue_number: context.issue.number,
+	      owner: context.repo.owner,
+	      repo: context.repo.repo,
+	      body: "Thanks for your pull request! A maintainer will 
+review it soon."
+	    })
