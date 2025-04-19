@@ -2,7 +2,7 @@ name: PR Greeter
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
 
 jobs:
   greet:
@@ -17,6 +17,7 @@ jobs:
 	      owner: context.repo.owner,
 	      repo: context.repo.repo,
 	      body: "Thanks for your pull request! A maintainer will 
-review it soon.\n\nTiggered by: @${{ github.actor 
+review it soon, in case you need right now leave a comment.\n\nTiggered 
+by: @${{ github.actor 
 }}"
 	    })
